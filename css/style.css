@@ -20,6 +20,9 @@ ul {
 .logo {
     color: var(--accent-color)
 }
+.logo span {
+    color: #000000;;
+}
 .site-nav .link {
     color: var(--primary-text-color);
 }
@@ -56,6 +59,9 @@ ul {
 }
 
 /* Подвал */
+.logo.footer span {
+    color: #FFFFFF;
+}
 .address {
     color: var(--primary-white-color);
 }
