@@ -1,0 +1,83 @@
+/* акцент #2196F3 */
+/* основной цвет #212121 */
+/* вторичный цвет #757575 */
+/* белый #FFFFFF */
+:root {
+    --primary-text-color: #212121;
+    --secondary-text-color: #757575;
+    --accent-color: #2196F3;
+    --primary-white-color: #FFFFFF;
+}
+body {
+    color: var(--primary-text-color);
+}
+ul {
+    list-style: none;
+}
+
+/* Шапка */
+
+.logo {
+    color: var(--accent-color)
+}
+.site-nav .link {
+    color: var(--primary-text-color);
+}
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--accent-color);
+}
+.site-nav .link.current {
+    color: var(--accent-color);
+}
+.contacts .link {
+    color: var(--secondary-text-color);
+}
+.contacts .link:hover,
+.contacts .link:focus {
+    color: var(--accent-color);
+}
+
+/* Hero */
+.button {
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+}
+
+/* Секции */
+.section .section-title {
+    color: var(--primary-text-color);
+}
+.section .features-text {
+    color: var(--secondary-text-color);
+}
+.team-role {
+    color: var(--secondary-text-color);
+}
+
+/* Подвал */
+.address {
+    color: var(--primary-white-color);
+}
+.address-contacts {
+    color: var(--primary-white-color);
+}
+
+/* Стили для страницы portfolio.html */
+/* Цвет фона объектов #F5F4FA */
+
+/* Кнопки типа проектов */
+.type-button {
+    color: var(--primary-text-color);
+    background-color: #F5F4FA;
+}
+.type-button:hover,
+.type-button:focus {
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+}
+
+/* Список проектов */
+.project-type {
+    color: var(--secondary-text-color);
+}
