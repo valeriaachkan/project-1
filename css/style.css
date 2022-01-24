@@ -26,12 +26,25 @@ body {
 .image {
     display: block;
 }
+
 .container {
     width: 1200px;
     margin: 0 auto;
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 /* Лого */
 .logo {
     color: var(--accent-color);
@@ -91,20 +104,35 @@ body {
 }
 .contacts .link {
     color: var(--secondary-text-color);
+    fill: var(--secondary-text-color);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
 }
 .contacts .link:hover,
 .contacts .link:focus {
     color: var(--accent-color);
+    fill: var(--accent-color);
+}
+.contacts-icon {
+    margin-right: 10px;
 }
 
 /* Hero */
 .hero {
-    background-color: #2F303A;
+    background-color: #C4C4C4;
     text-align: center;
 }
+.hero .overlay {
+    height: 600px;
+    min-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(../images/hero-image.jpg);
+}
 .hero-title {
-    margin-top: 0;
     margin-bottom: 30px;
 
     color: var(--primary-white-color);
@@ -136,9 +164,10 @@ body {
 /* Секции */
 .section {
     padding-bottom: 94px;
-}
-.section:nth-child(2n) {
     padding-top: 94px;
+}
+.section.no-padding {
+    padding-top: 0;
 }
 .section:nth-child(4) {
     background-color: var(--secondary-background-color);
@@ -147,7 +176,6 @@ body {
     margin-top: 0;
     margin-bottom: 50px;
 
-    color: var(--primary-text-color);
     font-style: normal;
     font-size: 36px;
     text-align: center;
@@ -162,6 +190,16 @@ body {
     line-height: 1.14;
     text-transform: uppercase;
 }
+.features-icon {
+    display: flex;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    background-color: #F5F4FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    padding: 25px 100px;
+}
 .features-text {
     margin: 0;
     color: var(--secondary-text-color);
@@ -170,12 +208,10 @@ body {
 }
 .features.list {
     display: flex;
+    justify-content: space-between;
 }
 .features .item {
     width: 270px;
-}
-.features .item + .item {
-    margin-left: 30px;
 }
 
 /* Чем мы занимаемся */
@@ -205,14 +241,57 @@ body {
 }
 .position {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 
     color: var(--secondary-text-color);
     font-size: 16px;
     line-height: 1.18;
     text-align: center; 
 }
+.networks.list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+.networks-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    fill: #AFB1B8;
+}
 
+.networks-item + .networks-item {
+    margin-left: 10px;
+}
+.networks-link:hover, 
+.networks-link:focus {
+    background-color: var(--accent-color);
+    fill: var(--primary-white-color);
+}
+
+/* Постоянные клиенты */
+.clients.list {
+    display: flex;
+    justify-content: space-between;
+}
+.client-item {
+    width: 170px;
+    height: 92px;
+    border-radius: 4px;
+    border: 1px solid #AFB1B8;
+    padding: 16px 32px;
+    fill: #afb1b8;
+}
+.client-item:hover {
+    border-color: var(--accent-color);
+    fill: var(--accent-color);
+    cursor: pointer;
+}
 /* Подвал */  
 .footer {
     background-color: #2F303A;
@@ -220,7 +299,9 @@ body {
 .container.footer {
     padding-top: 60px;
     padding-bottom: 60px;
+    display: flex;
 }
+
 .logo.footer span {
     color: #FFFFFF;
 }
@@ -239,6 +320,41 @@ body {
 
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
+}
+.join-us {
+    margin-left: 70px;
+    margin-right: auto;
+}
+.footer-networks.heading {
+    margin-top: 12px;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+}
+.footer-networks.list {
+    display: flex;
+    align-items: center;
+}
+.footer-networks.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    fill: var(--primary-white-color);
+}
+.footer-networks.item + .footer-networks.item {
+    margin-left: 10px;
+}
+.footer-networks .link:hover, 
+.footer-networks .icon:focus {
+    background-color: var(--accent-color);
 }
 
 /* Стили для страницы portfolio.html */
