@@ -94,7 +94,22 @@ body {
     color: var(--accent-color);
 }
 .site-nav .link.current {
+    position: relative;
+
     color: var(--accent-color);
+}
+.site-nav .link.current::after {
+    content: ' ';
+    display: inline-block;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
 }
 .contacts {
     margin-left: auto;
@@ -215,9 +230,31 @@ body {
 }
 
 /* Чем мы занимаемся */
-.picture.list {
+.service-area.list {
     display: flex;
     justify-content: space-between;
+}
+.service-area.item {
+    position: relative;
+}
+.service-area.title {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase; 
+    color: var(--primary-white-color);
+}
+.service-area.thumb {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    padding-top: 27px;
+    padding-bottom: 27px;
+    background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* Наша команда */
@@ -287,7 +324,8 @@ body {
     padding: 16px 32px;
     fill: #afb1b8;
 }
-.client-item:hover {
+.client-item:hover,
+.client-item:focus {
     border-color: var(--accent-color);
     fill: var(--accent-color);
     cursor: pointer;
@@ -353,7 +391,7 @@ body {
     margin-left: 10px;
 }
 .footer-networks .link:hover, 
-.footer-networks .icon:focus {
+.footer-networks .link:focus {
     background-color: var(--accent-color);
 }
 
@@ -392,6 +430,7 @@ body {
 .filter-button:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Список проектов */
@@ -402,6 +441,15 @@ body {
 }
 .projects .item {
     margin: 15px;
+} 
+.projects-card {
+    position: relative;
+}
+.projects-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: teal;
 }
 .card-text {
     padding: 20px 24px;
