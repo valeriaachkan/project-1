@@ -137,7 +137,7 @@ body {
     display: inline-flex;
     align-items: center;
 
-    transition: color 250ms var(--o-animation-timing-function);
+    transition: color 250ms var(--o-animation-timing-function), fill 250ms var(--o-animation-timing-function);
 }
 .contacts .link:hover,
 .contacts .link:focus {
@@ -162,8 +162,13 @@ body {
     padding-bottom: 200px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4) ), url(../images/hero-image.jpg);
 }
+.heading-container {
+    width: 696px;
+    margin: auto;
+}
 .hero-title {
     margin-bottom: 30px;
+    margin-top: 0;
 
     color: var(--primary-white-color);
     font-weight: 900;
@@ -415,6 +420,58 @@ body {
 .footer-networks .link:focus {
     background-color: var(--accent-color);
 }
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+
+}
+.subscription-title {
+    margin-top: 12px;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.email-form {   
+    margin-right: 12px;
+    padding: 15px 16px;
+    width: 358px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.subscription-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 200px;
+    padding: 10px 29px;
+    background: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 0;
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em; 
+    color: var(--primary-white-color);
+
+    cursor: pointer;
+}
+.icon-send {
+    width: 24px;
+    height: 24px;
+}
 
 /* Модальное окно и бэкдроп */
 .backdrop.is-hidden {
@@ -438,6 +495,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 40px;
 
     min-width: 528px;
     min-height: 581px;
@@ -467,7 +525,90 @@ body {
 
     cursor: pointer;
 }
+.form-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--primary-text-color);
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    fill: #000000;
     
+}
+.form-label {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--secondary-text-color);
+}
+.form-input {
+    padding: 12px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+.input-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    fill: #212121;
+}
+.form-input.comment {
+    height: 120px;
+    padding-right: 16px;
+    padding-left: 16px;
+    resize: none;
+}
+.form-input.comment::placeholder { 
+    color: rgba(117, 117, 117, 0.5);
+}
+.form-policy {
+    margin-top: 10px;
+}
+.label-checkbox {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--secondary-text-color);
+}
+.policy-link {
+    color: var(--accent-color);
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-button {
+    padding: 10px 55px;
+    margin-top: 30px;
+    
+    background: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 0;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--primary-white-color);
+
+    cursor: pointer;
+}
 
 /* Стили для страницы portfolio.html */
 /* Цвет фона объектов #F5F4FA */
