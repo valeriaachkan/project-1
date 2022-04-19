@@ -646,7 +646,7 @@ body {
 .input-checkbox:checked + .icon-checkbox {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-    background-image: url(/images/icon-check.svg);
+    background-image: url(../images/icon-check.svg);
     background-origin: content-box;
     background-size: contain;
     background-position: center;
