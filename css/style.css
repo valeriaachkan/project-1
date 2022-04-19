@@ -420,10 +420,12 @@ body {
 .footer-networks .link:focus {
     background-color: var(--accent-color);
 }
+
+/* Имейл-форма подписки */
+
 .subscription-form {
     display: flex;
     flex-direction: column;
-
 }
 .subscription-title {
     margin-top: 12px;
@@ -444,6 +446,12 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     background-color: transparent;
+
+    font-weight: 400;
+    color: var(--primary-white-color);
+}
+.email-form:focus {
+    outline: 0;
 }
 
 .subscription-button {
@@ -471,9 +479,11 @@ body {
 .icon-send {
     width: 24px;
     height: 24px;
+    background-image: url(../images/icon-send.svg);
 }
 
 /* Модальное окно и бэкдроп */
+
 .backdrop.is-hidden {
     /* visibility: hidden; */
     opacity: 0;
@@ -524,7 +534,16 @@ body {
     background-color: transparent;
 
     cursor: pointer;
+
+    transition: fill 250ms var(--o-animation-timing-function);
 }
+.button-close:hover,
+.button-close:focus {
+    fill: var(--accent-color);
+}
+
+/* Форма модалки  */
+
 .form-title {
     margin-top: 0;
     margin-bottom: 12px;
@@ -539,8 +558,9 @@ body {
     flex-direction: column;
     margin-bottom: 10px;
 
+    position: relative;
+
     fill: #000000;
-    
 }
 .form-label {
     margin-bottom: 4px;
@@ -552,6 +572,7 @@ body {
 }
 .form-input {
     padding: 12px;
+    padding-left: 42px;
 
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -559,13 +580,20 @@ body {
     line-height: 1.16;
     letter-spacing: 0.01em;
 }
-.input-svg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 18px;
-    height: 18px;
-    fill: #212121;
+.input-icon {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    
+    fill: var(--primary-text-color);
+}
+.form-input:focus {
+    border: 1px solid var(--accent-color);
+    outline: 0;
+}
+.form-input:focus + .input-icon {
+    fill: var(--accent-color);
 }
 .form-input.comment {
     height: 120px;
@@ -576,15 +604,57 @@ body {
 .form-input.comment::placeholder { 
     color: rgba(117, 117, 117, 0.5);
 }
+
 .form-policy {
+    position: relative;
+
     margin-top: 10px;
+    border: 1px black;
 }
-.label-checkbox {
+.checkbox-title {
+    display: inline-block;
+    margin: 0;
+    margin-left: 19px;
+
     font-size: 14px;
     line-height: 1.71;
     color: var(--secondary-text-color);
 }
+.input-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.icon-checkbox {
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+
+    border: 1.65px solid var(--primary-text-color);
+    border-radius: 1.7px;
+}
+.input-checkbox:checked + .icon-checkbox {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-image: url(/images/icon-check.svg);
+    background-origin: content-box;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .policy-link {
+    font-size: 14px;
+    line-height: 1.71;
     color: var(--accent-color);
 }
 .center {
